@@ -1,0 +1,1211 @@
+<!DOCTYPE html>
+<html>
+  <!--
+  index.html: p1 html
+  Copyright (C)  2022 University of Chicago. All rights reserved.
+
+  This is only for students and instructors in the 2022 CMSC 23900 ("DataVis") class, for use in
+  that class. It is not licensed for open-source or any other kind of re-distribution. Do not allow
+  pthis file to be copied or downloaded by anyone outside the 2022 DataVis class.
+  -->
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="icon" href="data:;base64,iVBORw0KGgo=" />
+    <title>DataVis'22 p1</title>
+    <style>
+      .good {
+        background-color: rgb(240, 255, 240);
+      }
+      .bad {
+        background-color: rgb(255, 220, 220);
+      }
+      .bar {
+        fill: #7af;
+      }
+      .dot {
+        fill: #289;
+      }
+      .stick {
+        stroke: #522;
+        stroke-width: 20;
+      }
+      .outlineCircle {
+        fill: #afa;
+        stroke: #948;
+      }
+      .roundRect {
+        fill: #39e;
+      }
+      .sizedCircle {
+        fill: #990;
+      }
+      .coloredCircle {
+      }
+      .slope line {
+        stroke: #4ee;
+        stroke-width: 12;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="cksum0" class="good">cksum(p1.js) == 635449954 as expected</div>
+    <div id="cksum1" class="good">cksum(util.js) == 1652359829 as expected</div>
+    <div id="cksum2" class="good">cksum(index.html) == 2166742627 as expected</div>
+    <div id="allvis">
+      <svg id="vis-bars" width="900" height="400">
+        <text class="label" transform="translate(10,18)">bars</text>
+        <g transform="translate(30, 30)">
+          <g
+            class="axis axis--y"
+            fill="none"
+            font-size="10"
+            font-family="sans-serif"
+            text-anchor="end"
+          >
+            <path class="domain" stroke="currentColor" d="M-6,350H0V0H-6"></path>
+            <g class="tick" opacity="1" transform="translate(0,350)">
+              <line stroke="currentColor" x2="-6"></line>
+              <text fill="currentColor" x="-9" dy="0.32em">0</text>
+            </g>
+            <g class="tick" opacity="1" transform="translate(0,315)">
+              <line stroke="currentColor" x2="-6"></line>
+              <text fill="currentColor" x="-9" dy="0.32em">1</text>
+            </g>
+            <g class="tick" opacity="1" transform="translate(0,280)">
+              <line stroke="currentColor" x2="-6"></line>
+              <text fill="currentColor" x="-9" dy="0.32em">2</text>
+            </g>
+            <g class="tick" opacity="1" transform="translate(0,244.99999999999997)">
+              <line stroke="currentColor" x2="-6"></line>
+              <text fill="currentColor" x="-9" dy="0.32em">3</text>
+            </g>
+            <g class="tick" opacity="1" transform="translate(0,210)">
+              <line stroke="currentColor" x2="-6"></line>
+              <text fill="currentColor" x="-9" dy="0.32em">4</text>
+            </g>
+            <g class="tick" opacity="1" transform="translate(0,175)">
+              <line stroke="currentColor" x2="-6"></line>
+              <text fill="currentColor" x="-9" dy="0.32em">5</text>
+            </g>
+            <g class="tick" opacity="1" transform="translate(0,140)">
+              <line stroke="currentColor" x2="-6"></line>
+              <text fill="currentColor" x="-9" dy="0.32em">6</text>
+            </g>
+            <g class="tick" opacity="1" transform="translate(0,105.00000000000001)">
+              <line stroke="currentColor" x2="-6"></line>
+              <text fill="currentColor" x="-9" dy="0.32em">7</text>
+            </g>
+            <g class="tick" opacity="1" transform="translate(0,69.99999999999999)">
+              <line stroke="currentColor" x2="-6"></line>
+              <text fill="currentColor" x="-9" dy="0.32em">8</text>
+            </g>
+            <g class="tick" opacity="1" transform="translate(0,34.99999999999999)">
+              <line stroke="currentColor" x2="-6"></line>
+              <text fill="currentColor" x="-9" dy="0.32em">9</text>
+            </g>
+            <g class="tick" opacity="1" transform="translate(0,0)">
+              <line stroke="currentColor" x2="-6"></line>
+              <text fill="currentColor" x="-9" dy="0.32em">10</text>
+            </g>
+          </g>
+          <g
+            class="axis axis--x"
+            transform="translate(0,350)"
+            fill="none"
+            font-size="10"
+            font-family="sans-serif"
+            text-anchor="middle"
+          >
+            <path class="domain" stroke="currentColor" d="M0,6V0H860V6"></path>
+            <g class="tick" opacity="1" transform="translate(46.83168316831686,0)">
+              <line stroke="currentColor" y2="6"></line>
+              <text fill="currentColor" y="9" dy="0.71em">A</text>
+            </g>
+            <g class="tick" opacity="1" transform="translate(131.980198019802,0)">
+              <line stroke="currentColor" y2="6"></line>
+              <text fill="currentColor" y="9" dy="0.71em">B</text>
+            </g>
+            <g class="tick" opacity="1" transform="translate(217.12871287128715,0)">
+              <line stroke="currentColor" y2="6"></line>
+              <text fill="currentColor" y="9" dy="0.71em">C</text>
+            </g>
+            <g class="tick" opacity="1" transform="translate(302.2772277227723,0)">
+              <line stroke="currentColor" y2="6"></line>
+              <text fill="currentColor" y="9" dy="0.71em">D</text>
+            </g>
+            <g class="tick" opacity="1" transform="translate(387.42574257425747,0)">
+              <line stroke="currentColor" y2="6"></line>
+              <text fill="currentColor" y="9" dy="0.71em">E</text>
+            </g>
+            <g class="tick" opacity="1" transform="translate(472.57425742574264,0)">
+              <line stroke="currentColor" y2="6"></line>
+              <text fill="currentColor" y="9" dy="0.71em">F</text>
+            </g>
+            <g class="tick" opacity="1" transform="translate(557.7227722772277,0)">
+              <line stroke="currentColor" y2="6"></line>
+              <text fill="currentColor" y="9" dy="0.71em">G</text>
+            </g>
+            <g class="tick" opacity="1" transform="translate(642.8712871287129,0)">
+              <line stroke="currentColor" y2="6"></line>
+              <text fill="currentColor" y="9" dy="0.71em">H</text>
+            </g>
+            <g class="tick" opacity="1" transform="translate(728.0198019801979,0)">
+              <line stroke="currentColor" y2="6"></line>
+              <text fill="currentColor" y="9" dy="0.71em">I</text>
+            </g>
+            <g class="tick" opacity="1" transform="translate(813.1683168316832,0)">
+              <line stroke="currentColor" y2="6"></line>
+              <text fill="currentColor" y="9" dy="0.71em">J</text>
+            </g>
+          </g>
+          <g>
+            <rect
+              class="bar"
+              x="8.51485148514854"
+              width="76.63366336633663"
+              y="346.5"
+              height="3.5"
+            ></rect>
+            <rect
+              class="bar"
+              x="93.66336633663369"
+              width="76.63366336633663"
+              y="308.38888888888886"
+              height="41.61111111111114"
+            ></rect>
+            <rect
+              class="bar"
+              x="178.81188118811883"
+              width="76.63366336633663"
+              y="270.27777777777777"
+              height="79.72222222222223"
+            ></rect>
+            <rect
+              class="bar"
+              x="263.960396039604"
+              width="76.63366336633663"
+              y="232.16666666666666"
+              height="117.83333333333334"
+            ></rect>
+            <rect
+              class="bar"
+              x="349.1089108910891"
+              width="76.63366336633663"
+              y="194.05555555555554"
+              height="155.94444444444446"
+            ></rect>
+            <rect
+              class="bar"
+              x="434.2574257425743"
+              width="76.63366336633663"
+              y="155.94444444444446"
+              height="194.05555555555554"
+            ></rect>
+            <rect
+              class="bar"
+              x="519.4059405940594"
+              width="76.63366336633663"
+              y="117.83333333333333"
+              height="232.16666666666669"
+            ></rect>
+            <rect
+              class="bar"
+              x="604.5544554455446"
+              width="76.63366336633663"
+              y="79.72222222222221"
+              height="270.27777777777777"
+            ></rect>
+            <rect
+              class="bar"
+              x="689.7029702970297"
+              width="76.63366336633663"
+              y="41.611111111111086"
+              height="308.3888888888889"
+            ></rect>
+            <rect
+              class="bar"
+              x="774.8514851485149"
+              width="76.63366336633663"
+              y="3.500000000000003"
+              height="346.5"
+            ></rect>
+          </g>
+        </g></svg
+      ><svg id="vis-dots" width="900" height="400">
+        <text class="label" transform="translate(10,18)">dots</text>
+        <g transform="translate(30, 30)">
+          <g
+            class="axis axis--y"
+            fill="none"
+            font-size="10"
+            font-family="sans-serif"
+            text-anchor="end"
+          >
+            <path class="domain" stroke="currentColor" d="M-6,350H0V0H-6"></path>
+            <g class="tick" opacity="1" transform="translate(0,350)">
+              <line stroke="currentColor" x2="-6"></line>
+              <text fill="currentColor" x="-9" dy="0.32em">0</text>
+            </g>
+            <g class="tick" opacity="1" transform="translate(0,315)">
+              <line stroke="currentColor" x2="-6"></line>
+              <text fill="currentColor" x="-9" dy="0.32em">1</text>
+            </g>
+            <g class="tick" opacity="1" transform="translate(0,280)">
+              <line stroke="currentColor" x2="-6"></line>
+              <text fill="currentColor" x="-9" dy="0.32em">2</text>
+            </g>
+            <g class="tick" opacity="1" transform="translate(0,244.99999999999997)">
+              <line stroke="currentColor" x2="-6"></line>
+              <text fill="currentColor" x="-9" dy="0.32em">3</text>
+            </g>
+            <g class="tick" opacity="1" transform="translate(0,210)">
+              <line stroke="currentColor" x2="-6"></line>
+              <text fill="currentColor" x="-9" dy="0.32em">4</text>
+            </g>
+            <g class="tick" opacity="1" transform="translate(0,175)">
+              <line stroke="currentColor" x2="-6"></line>
+              <text fill="currentColor" x="-9" dy="0.32em">5</text>
+            </g>
+            <g class="tick" opacity="1" transform="translate(0,140)">
+              <line stroke="currentColor" x2="-6"></line>
+              <text fill="currentColor" x="-9" dy="0.32em">6</text>
+            </g>
+            <g class="tick" opacity="1" transform="translate(0,105.00000000000001)">
+              <line stroke="currentColor" x2="-6"></line>
+              <text fill="currentColor" x="-9" dy="0.32em">7</text>
+            </g>
+            <g class="tick" opacity="1" transform="translate(0,69.99999999999999)">
+              <line stroke="currentColor" x2="-6"></line>
+              <text fill="currentColor" x="-9" dy="0.32em">8</text>
+            </g>
+            <g class="tick" opacity="1" transform="translate(0,34.99999999999999)">
+              <line stroke="currentColor" x2="-6"></line>
+              <text fill="currentColor" x="-9" dy="0.32em">9</text>
+            </g>
+            <g class="tick" opacity="1" transform="translate(0,0)">
+              <line stroke="currentColor" x2="-6"></line>
+              <text fill="currentColor" x="-9" dy="0.32em">10</text>
+            </g>
+          </g>
+          <g
+            class="axis axis--x"
+            transform="translate(0,350)"
+            fill="none"
+            font-size="10"
+            font-family="sans-serif"
+            text-anchor="middle"
+          >
+            <path class="domain" stroke="currentColor" d="M0,6V0H860V6"></path>
+            <g class="tick" opacity="1" transform="translate(46.83168316831686,0)">
+              <line stroke="currentColor" y2="6"></line>
+              <text fill="currentColor" y="9" dy="0.71em">A</text>
+            </g>
+            <g class="tick" opacity="1" transform="translate(131.980198019802,0)">
+              <line stroke="currentColor" y2="6"></line>
+              <text fill="currentColor" y="9" dy="0.71em">B</text>
+            </g>
+            <g class="tick" opacity="1" transform="translate(217.12871287128715,0)">
+              <line stroke="currentColor" y2="6"></line>
+              <text fill="currentColor" y="9" dy="0.71em">C</text>
+            </g>
+            <g class="tick" opacity="1" transform="translate(302.2772277227723,0)">
+              <line stroke="currentColor" y2="6"></line>
+              <text fill="currentColor" y="9" dy="0.71em">D</text>
+            </g>
+            <g class="tick" opacity="1" transform="translate(387.42574257425747,0)">
+              <line stroke="currentColor" y2="6"></line>
+              <text fill="currentColor" y="9" dy="0.71em">E</text>
+            </g>
+            <g class="tick" opacity="1" transform="translate(472.57425742574264,0)">
+              <line stroke="currentColor" y2="6"></line>
+              <text fill="currentColor" y="9" dy="0.71em">F</text>
+            </g>
+            <g class="tick" opacity="1" transform="translate(557.7227722772277,0)">
+              <line stroke="currentColor" y2="6"></line>
+              <text fill="currentColor" y="9" dy="0.71em">G</text>
+            </g>
+            <g class="tick" opacity="1" transform="translate(642.8712871287129,0)">
+              <line stroke="currentColor" y2="6"></line>
+              <text fill="currentColor" y="9" dy="0.71em">H</text>
+            </g>
+            <g class="tick" opacity="1" transform="translate(728.0198019801979,0)">
+              <line stroke="currentColor" y2="6"></line>
+              <text fill="currentColor" y="9" dy="0.71em">I</text>
+            </g>
+            <g class="tick" opacity="1" transform="translate(813.1683168316832,0)">
+              <line stroke="currentColor" y2="6"></line>
+              <text fill="currentColor" y="9" dy="0.71em">J</text>
+            </g>
+          </g>
+          <g>
+            <circle class="dot" cx="46.83168316831686" r="9.57920792079208" cy="346.5"></circle>
+            <circle
+              class="dot"
+              cx="131.980198019802"
+              r="9.57920792079208"
+              cy="308.38888888888886"
+            ></circle>
+            <circle
+              class="dot"
+              cx="217.12871287128715"
+              r="9.57920792079208"
+              cy="270.27777777777777"
+            ></circle>
+            <circle
+              class="dot"
+              cx="302.2772277227723"
+              r="9.57920792079208"
+              cy="232.16666666666666"
+            ></circle>
+            <circle
+              class="dot"
+              cx="387.42574257425747"
+              r="9.57920792079208"
+              cy="194.05555555555554"
+            ></circle>
+            <circle
+              class="dot"
+              cx="472.57425742574264"
+              r="9.57920792079208"
+              cy="155.94444444444446"
+            ></circle>
+            <circle
+              class="dot"
+              cx="557.7227722772277"
+              r="9.57920792079208"
+              cy="117.83333333333333"
+            ></circle>
+            <circle
+              class="dot"
+              cx="642.8712871287129"
+              r="9.57920792079208"
+              cy="79.72222222222221"
+            ></circle>
+            <circle
+              class="dot"
+              cx="728.0198019801979"
+              r="9.57920792079208"
+              cy="41.611111111111086"
+            ></circle>
+            <circle
+              class="dot"
+              cx="813.1683168316832"
+              r="9.57920792079208"
+              cy="3.500000000000003"
+            ></circle>
+          </g>
+        </g></svg
+      ><svg id="vis-sticks" width="900" height="400">
+        <text class="label" transform="translate(10,18)">sticks</text>
+        <g transform="translate(30, 30)">
+          <g
+            class="axis axis--y"
+            fill="none"
+            font-size="10"
+            font-family="sans-serif"
+            text-anchor="end"
+          >
+            <path class="domain" stroke="currentColor" d="M-6,350H0V0H-6"></path>
+            <g class="tick" opacity="1" transform="translate(0,350)">
+              <line stroke="currentColor" x2="-6"></line>
+              <text fill="currentColor" x="-9" dy="0.32em">0</text>
+            </g>
+            <g class="tick" opacity="1" transform="translate(0,315)">
+              <line stroke="currentColor" x2="-6"></line>
+              <text fill="currentColor" x="-9" dy="0.32em">1</text>
+            </g>
+            <g class="tick" opacity="1" transform="translate(0,280)">
+              <line stroke="currentColor" x2="-6"></line>
+              <text fill="currentColor" x="-9" dy="0.32em">2</text>
+            </g>
+            <g class="tick" opacity="1" transform="translate(0,244.99999999999997)">
+              <line stroke="currentColor" x2="-6"></line>
+              <text fill="currentColor" x="-9" dy="0.32em">3</text>
+            </g>
+            <g class="tick" opacity="1" transform="translate(0,210)">
+              <line stroke="currentColor" x2="-6"></line>
+              <text fill="currentColor" x="-9" dy="0.32em">4</text>
+            </g>
+            <g class="tick" opacity="1" transform="translate(0,175)">
+              <line stroke="currentColor" x2="-6"></line>
+              <text fill="currentColor" x="-9" dy="0.32em">5</text>
+            </g>
+            <g class="tick" opacity="1" transform="translate(0,140)">
+              <line stroke="currentColor" x2="-6"></line>
+              <text fill="currentColor" x="-9" dy="0.32em">6</text>
+            </g>
+            <g class="tick" opacity="1" transform="translate(0,105.00000000000001)">
+              <line stroke="currentColor" x2="-6"></line>
+              <text fill="currentColor" x="-9" dy="0.32em">7</text>
+            </g>
+            <g class="tick" opacity="1" transform="translate(0,69.99999999999999)">
+              <line stroke="currentColor" x2="-6"></line>
+              <text fill="currentColor" x="-9" dy="0.32em">8</text>
+            </g>
+            <g class="tick" opacity="1" transform="translate(0,34.99999999999999)">
+              <line stroke="currentColor" x2="-6"></line>
+              <text fill="currentColor" x="-9" dy="0.32em">9</text>
+            </g>
+            <g class="tick" opacity="1" transform="translate(0,0)">
+              <line stroke="currentColor" x2="-6"></line>
+              <text fill="currentColor" x="-9" dy="0.32em">10</text>
+            </g>
+          </g>
+          <g
+            class="axis axis--x"
+            transform="translate(0,350)"
+            fill="none"
+            font-size="10"
+            font-family="sans-serif"
+            text-anchor="middle"
+          >
+            <path class="domain" stroke="currentColor" d="M0,6V0H860V6"></path>
+            <g class="tick" opacity="1" transform="translate(46.83168316831686,0)">
+              <line stroke="currentColor" y2="6"></line>
+              <text fill="currentColor" y="9" dy="0.71em">A</text>
+            </g>
+            <g class="tick" opacity="1" transform="translate(131.980198019802,0)">
+              <line stroke="currentColor" y2="6"></line>
+              <text fill="currentColor" y="9" dy="0.71em">B</text>
+            </g>
+            <g class="tick" opacity="1" transform="translate(217.12871287128715,0)">
+              <line stroke="currentColor" y2="6"></line>
+              <text fill="currentColor" y="9" dy="0.71em">C</text>
+            </g>
+            <g class="tick" opacity="1" transform="translate(302.2772277227723,0)">
+              <line stroke="currentColor" y2="6"></line>
+              <text fill="currentColor" y="9" dy="0.71em">D</text>
+            </g>
+            <g class="tick" opacity="1" transform="translate(387.42574257425747,0)">
+              <line stroke="currentColor" y2="6"></line>
+              <text fill="currentColor" y="9" dy="0.71em">E</text>
+            </g>
+            <g class="tick" opacity="1" transform="translate(472.57425742574264,0)">
+              <line stroke="currentColor" y2="6"></line>
+              <text fill="currentColor" y="9" dy="0.71em">F</text>
+            </g>
+            <g class="tick" opacity="1" transform="translate(557.7227722772277,0)">
+              <line stroke="currentColor" y2="6"></line>
+              <text fill="currentColor" y="9" dy="0.71em">G</text>
+            </g>
+            <g class="tick" opacity="1" transform="translate(642.8712871287129,0)">
+              <line stroke="currentColor" y2="6"></line>
+              <text fill="currentColor" y="9" dy="0.71em">H</text>
+            </g>
+            <g class="tick" opacity="1" transform="translate(728.0198019801979,0)">
+              <line stroke="currentColor" y2="6"></line>
+              <text fill="currentColor" y="9" dy="0.71em">I</text>
+            </g>
+            <g class="tick" opacity="1" transform="translate(813.1683168316832,0)">
+              <line stroke="currentColor" y2="6"></line>
+              <text fill="currentColor" y="9" dy="0.71em">J</text>
+            </g>
+          </g>
+          <g>
+            <line
+              class="stick"
+              x1="46.83168316831686"
+              x2="46.83168316831686"
+              y1="350"
+              y2="346.5"
+            ></line>
+            <line
+              class="stick"
+              x1="131.980198019802"
+              x2="131.980198019802"
+              y1="350"
+              y2="308.38888888888886"
+            ></line>
+            <line
+              class="stick"
+              x1="217.12871287128715"
+              x2="217.12871287128715"
+              y1="350"
+              y2="270.27777777777777"
+            ></line>
+            <line
+              class="stick"
+              x1="302.2772277227723"
+              x2="302.2772277227723"
+              y1="350"
+              y2="232.16666666666666"
+            ></line>
+            <line
+              class="stick"
+              x1="387.42574257425747"
+              x2="387.42574257425747"
+              y1="350"
+              y2="194.05555555555554"
+            ></line>
+            <line
+              class="stick"
+              x1="472.57425742574264"
+              x2="472.57425742574264"
+              y1="350"
+              y2="155.94444444444446"
+            ></line>
+            <line
+              class="stick"
+              x1="557.7227722772277"
+              x2="557.7227722772277"
+              y1="350"
+              y2="117.83333333333333"
+            ></line>
+            <line
+              class="stick"
+              x1="642.8712871287129"
+              x2="642.8712871287129"
+              y1="350"
+              y2="79.72222222222221"
+            ></line>
+            <line
+              class="stick"
+              x1="728.0198019801979"
+              x2="728.0198019801979"
+              y1="350"
+              y2="41.611111111111086"
+            ></line>
+            <line
+              class="stick"
+              x1="813.1683168316832"
+              x2="813.1683168316832"
+              y1="350"
+              y2="3.500000000000003"
+            ></line>
+          </g>
+        </g></svg
+      ><svg id="vis-outlineCircles" width="900" height="126.63366336633663">
+        <text class="label" transform="translate(10,18)">outlineCircles</text>
+        <g transform="translate(30, 30)">
+          <g
+            class="axis axis--x"
+            transform="translate(0,76.63366336633663)"
+            fill="none"
+            font-size="10"
+            font-family="sans-serif"
+            text-anchor="middle"
+          >
+            <path class="domain" stroke="currentColor" d="M0,6V0H860V6"></path>
+            <g class="tick" opacity="1" transform="translate(46.83168316831686,0)">
+              <line stroke="currentColor" y2="6"></line>
+              <text fill="currentColor" y="9" dy="0.71em">A</text>
+            </g>
+            <g class="tick" opacity="1" transform="translate(131.980198019802,0)">
+              <line stroke="currentColor" y2="6"></line>
+              <text fill="currentColor" y="9" dy="0.71em">B</text>
+            </g>
+            <g class="tick" opacity="1" transform="translate(217.12871287128715,0)">
+              <line stroke="currentColor" y2="6"></line>
+              <text fill="currentColor" y="9" dy="0.71em">C</text>
+            </g>
+            <g class="tick" opacity="1" transform="translate(302.2772277227723,0)">
+              <line stroke="currentColor" y2="6"></line>
+              <text fill="currentColor" y="9" dy="0.71em">D</text>
+            </g>
+            <g class="tick" opacity="1" transform="translate(387.42574257425747,0)">
+              <line stroke="currentColor" y2="6"></line>
+              <text fill="currentColor" y="9" dy="0.71em">E</text>
+            </g>
+            <g class="tick" opacity="1" transform="translate(472.57425742574264,0)">
+              <line stroke="currentColor" y2="6"></line>
+              <text fill="currentColor" y="9" dy="0.71em">F</text>
+            </g>
+            <g class="tick" opacity="1" transform="translate(557.7227722772277,0)">
+              <line stroke="currentColor" y2="6"></line>
+              <text fill="currentColor" y="9" dy="0.71em">G</text>
+            </g>
+            <g class="tick" opacity="1" transform="translate(642.8712871287129,0)">
+              <line stroke="currentColor" y2="6"></line>
+              <text fill="currentColor" y="9" dy="0.71em">H</text>
+            </g>
+            <g class="tick" opacity="1" transform="translate(728.0198019801979,0)">
+              <line stroke="currentColor" y2="6"></line>
+              <text fill="currentColor" y="9" dy="0.71em">I</text>
+            </g>
+            <g class="tick" opacity="1" transform="translate(813.1683168316832,0)">
+              <line stroke="currentColor" y2="6"></line>
+              <text fill="currentColor" y="9" dy="0.71em">J</text>
+            </g>
+          </g>
+          <g>
+            <circle
+              class="outlineCircle"
+              cx="46.83168316831686"
+              cy="38.31683168316832"
+              r="19.15841584158416"
+              stroke-width="0.3831683168316832"
+            ></circle>
+            <circle
+              class="outlineCircle"
+              cx="131.980198019802"
+              cy="38.31683168316832"
+              r="19.15841584158416"
+              stroke-width="4.555445544554456"
+            ></circle>
+            <circle
+              class="outlineCircle"
+              cx="217.12871287128715"
+              cy="38.31683168316832"
+              r="19.15841584158416"
+              stroke-width="8.727722772277229"
+            ></circle>
+            <circle
+              class="outlineCircle"
+              cx="302.2772277227723"
+              cy="38.31683168316832"
+              r="19.15841584158416"
+              stroke-width="12.9"
+            ></circle>
+            <circle
+              class="outlineCircle"
+              cx="387.42574257425747"
+              cy="38.31683168316832"
+              r="19.15841584158416"
+              stroke-width="17.072277227722775"
+            ></circle>
+            <circle
+              class="outlineCircle"
+              cx="472.57425742574264"
+              cy="38.31683168316832"
+              r="19.15841584158416"
+              stroke-width="21.24455445544554"
+            ></circle>
+            <circle
+              class="outlineCircle"
+              cx="557.7227722772277"
+              cy="38.31683168316832"
+              r="19.15841584158416"
+              stroke-width="25.41683168316832"
+            ></circle>
+            <circle
+              class="outlineCircle"
+              cx="642.8712871287129"
+              cy="38.31683168316832"
+              r="19.15841584158416"
+              stroke-width="29.589108910891092"
+            ></circle>
+            <circle
+              class="outlineCircle"
+              cx="728.0198019801979"
+              cy="38.31683168316832"
+              r="19.15841584158416"
+              stroke-width="33.761386138613865"
+            ></circle>
+            <circle
+              class="outlineCircle"
+              cx="813.1683168316832"
+              cy="38.31683168316832"
+              r="19.15841584158416"
+              stroke-width="37.93366336633663"
+            ></circle>
+          </g>
+        </g></svg
+      ><svg id="vis-sizedCircles" width="900" height="126.63366336633663">
+        <text class="label" transform="translate(10,18)">sizedCircles</text>
+        <g transform="translate(30, 30)">
+          <g
+            class="axis axis--x"
+            transform="translate(0,76.63366336633663)"
+            fill="none"
+            font-size="10"
+            font-family="sans-serif"
+            text-anchor="middle"
+          >
+            <path class="domain" stroke="currentColor" d="M0,6V0H860V6"></path>
+            <g class="tick" opacity="1" transform="translate(46.83168316831686,0)">
+              <line stroke="currentColor" y2="6"></line>
+              <text fill="currentColor" y="9" dy="0.71em">A</text>
+            </g>
+            <g class="tick" opacity="1" transform="translate(131.980198019802,0)">
+              <line stroke="currentColor" y2="6"></line>
+              <text fill="currentColor" y="9" dy="0.71em">B</text>
+            </g>
+            <g class="tick" opacity="1" transform="translate(217.12871287128715,0)">
+              <line stroke="currentColor" y2="6"></line>
+              <text fill="currentColor" y="9" dy="0.71em">C</text>
+            </g>
+            <g class="tick" opacity="1" transform="translate(302.2772277227723,0)">
+              <line stroke="currentColor" y2="6"></line>
+              <text fill="currentColor" y="9" dy="0.71em">D</text>
+            </g>
+            <g class="tick" opacity="1" transform="translate(387.42574257425747,0)">
+              <line stroke="currentColor" y2="6"></line>
+              <text fill="currentColor" y="9" dy="0.71em">E</text>
+            </g>
+            <g class="tick" opacity="1" transform="translate(472.57425742574264,0)">
+              <line stroke="currentColor" y2="6"></line>
+              <text fill="currentColor" y="9" dy="0.71em">F</text>
+            </g>
+            <g class="tick" opacity="1" transform="translate(557.7227722772277,0)">
+              <line stroke="currentColor" y2="6"></line>
+              <text fill="currentColor" y="9" dy="0.71em">G</text>
+            </g>
+            <g class="tick" opacity="1" transform="translate(642.8712871287129,0)">
+              <line stroke="currentColor" y2="6"></line>
+              <text fill="currentColor" y="9" dy="0.71em">H</text>
+            </g>
+            <g class="tick" opacity="1" transform="translate(728.0198019801979,0)">
+              <line stroke="currentColor" y2="6"></line>
+              <text fill="currentColor" y="9" dy="0.71em">I</text>
+            </g>
+            <g class="tick" opacity="1" transform="translate(813.1683168316832,0)">
+              <line stroke="currentColor" y2="6"></line>
+              <text fill="currentColor" y="9" dy="0.71em">J</text>
+            </g>
+          </g>
+          <g>
+            <circle
+              class="sizedCircle"
+              cx="46.83168316831686"
+              cy="38.31683168316832"
+              r="0.3831683168316832"
+            ></circle>
+            <circle
+              class="sizedCircle"
+              cx="131.980198019802"
+              cy="38.31683168316832"
+              r="4.555445544554456"
+            ></circle>
+            <circle
+              class="sizedCircle"
+              cx="217.12871287128715"
+              cy="38.31683168316832"
+              r="8.727722772277229"
+            ></circle>
+            <circle
+              class="sizedCircle"
+              cx="302.2772277227723"
+              cy="38.31683168316832"
+              r="12.9"
+            ></circle>
+            <circle
+              class="sizedCircle"
+              cx="387.42574257425747"
+              cy="38.31683168316832"
+              r="17.072277227722775"
+            ></circle>
+            <circle
+              class="sizedCircle"
+              cx="472.57425742574264"
+              cy="38.31683168316832"
+              r="21.24455445544554"
+            ></circle>
+            <circle
+              class="sizedCircle"
+              cx="557.7227722772277"
+              cy="38.31683168316832"
+              r="25.41683168316832"
+            ></circle>
+            <circle
+              class="sizedCircle"
+              cx="642.8712871287129"
+              cy="38.31683168316832"
+              r="29.589108910891092"
+            ></circle>
+            <circle
+              class="sizedCircle"
+              cx="728.0198019801979"
+              cy="38.31683168316832"
+              r="33.761386138613865"
+            ></circle>
+            <circle
+              class="sizedCircle"
+              cx="813.1683168316832"
+              cy="38.31683168316832"
+              r="37.93366336633663"
+            ></circle>
+          </g>
+        </g></svg
+      ><svg id="vis-roundRects" width="900" height="126.63366336633663">
+        <text class="label" transform="translate(10,18)">roundRects</text>
+        <g transform="translate(30, 30)">
+          <g
+            class="axis axis--x"
+            transform="translate(0,76.63366336633663)"
+            fill="none"
+            font-size="10"
+            font-family="sans-serif"
+            text-anchor="middle"
+          >
+            <path class="domain" stroke="currentColor" d="M0,6V0H860V6"></path>
+            <g class="tick" opacity="1" transform="translate(46.83168316831686,0)">
+              <line stroke="currentColor" y2="6"></line>
+              <text fill="currentColor" y="9" dy="0.71em">A</text>
+            </g>
+            <g class="tick" opacity="1" transform="translate(131.980198019802,0)">
+              <line stroke="currentColor" y2="6"></line>
+              <text fill="currentColor" y="9" dy="0.71em">B</text>
+            </g>
+            <g class="tick" opacity="1" transform="translate(217.12871287128715,0)">
+              <line stroke="currentColor" y2="6"></line>
+              <text fill="currentColor" y="9" dy="0.71em">C</text>
+            </g>
+            <g class="tick" opacity="1" transform="translate(302.2772277227723,0)">
+              <line stroke="currentColor" y2="6"></line>
+              <text fill="currentColor" y="9" dy="0.71em">D</text>
+            </g>
+            <g class="tick" opacity="1" transform="translate(387.42574257425747,0)">
+              <line stroke="currentColor" y2="6"></line>
+              <text fill="currentColor" y="9" dy="0.71em">E</text>
+            </g>
+            <g class="tick" opacity="1" transform="translate(472.57425742574264,0)">
+              <line stroke="currentColor" y2="6"></line>
+              <text fill="currentColor" y="9" dy="0.71em">F</text>
+            </g>
+            <g class="tick" opacity="1" transform="translate(557.7227722772277,0)">
+              <line stroke="currentColor" y2="6"></line>
+              <text fill="currentColor" y="9" dy="0.71em">G</text>
+            </g>
+            <g class="tick" opacity="1" transform="translate(642.8712871287129,0)">
+              <line stroke="currentColor" y2="6"></line>
+              <text fill="currentColor" y="9" dy="0.71em">H</text>
+            </g>
+            <g class="tick" opacity="1" transform="translate(728.0198019801979,0)">
+              <line stroke="currentColor" y2="6"></line>
+              <text fill="currentColor" y="9" dy="0.71em">I</text>
+            </g>
+            <g class="tick" opacity="1" transform="translate(813.1683168316832,0)">
+              <line stroke="currentColor" y2="6"></line>
+              <text fill="currentColor" y="9" dy="0.71em">J</text>
+            </g>
+          </g>
+          <g>
+            <rect
+              class="roundRect"
+              width="76.63366336633663"
+              height="76.63366336633663"
+              x="8.51485148514854"
+              y="0"
+              rx="37.93366336633663"
+              ry="37.93366336633663"
+            ></rect>
+            <rect
+              class="roundRect"
+              width="76.63366336633663"
+              height="76.63366336633663"
+              x="93.66336633663369"
+              y="0"
+              rx="33.76138613861386"
+              ry="33.76138613861386"
+            ></rect>
+            <rect
+              class="roundRect"
+              width="76.63366336633663"
+              height="76.63366336633663"
+              x="178.81188118811883"
+              y="0"
+              rx="29.589108910891085"
+              ry="29.589108910891085"
+            ></rect>
+            <rect
+              class="roundRect"
+              width="76.63366336633663"
+              height="76.63366336633663"
+              x="263.960396039604"
+              y="0"
+              rx="25.41683168316832"
+              ry="25.41683168316832"
+            ></rect>
+            <rect
+              class="roundRect"
+              width="76.63366336633663"
+              height="76.63366336633663"
+              x="349.1089108910891"
+              y="0"
+              rx="21.24455445544554"
+              ry="21.24455445544554"
+            ></rect>
+            <rect
+              class="roundRect"
+              width="76.63366336633663"
+              height="76.63366336633663"
+              x="434.2574257425743"
+              y="0"
+              rx="17.072277227722775"
+              ry="17.072277227722775"
+            ></rect>
+            <rect
+              class="roundRect"
+              width="76.63366336633663"
+              height="76.63366336633663"
+              x="519.4059405940594"
+              y="0"
+              rx="12.9"
+              ry="12.9"
+            ></rect>
+            <rect
+              class="roundRect"
+              width="76.63366336633663"
+              height="76.63366336633663"
+              x="604.5544554455446"
+              y="0"
+              rx="8.727722772277227"
+              ry="8.727722772277227"
+            ></rect>
+            <rect
+              class="roundRect"
+              width="76.63366336633663"
+              height="76.63366336633663"
+              x="689.7029702970297"
+              y="0"
+              rx="4.555445544554453"
+              ry="4.555445544554453"
+            ></rect>
+            <rect
+              class="roundRect"
+              width="76.63366336633663"
+              height="76.63366336633663"
+              x="774.8514851485149"
+              y="0"
+              rx="0.3831683168316835"
+              ry="0.3831683168316835"
+            ></rect>
+          </g>
+        </g></svg
+      ><svg id="vis-coloredCircles" width="900" height="126.63366336633663">
+        <text class="label" transform="translate(10,18)">coloredCircles</text>
+        <g transform="translate(30, 30)">
+          <g
+            class="axis axis--x"
+            transform="translate(0,76.63366336633663)"
+            fill="none"
+            font-size="10"
+            font-family="sans-serif"
+            text-anchor="middle"
+          >
+            <path class="domain" stroke="currentColor" d="M0,6V0H860V6"></path>
+            <g class="tick" opacity="1" transform="translate(46.83168316831686,0)">
+              <line stroke="currentColor" y2="6"></line>
+              <text fill="currentColor" y="9" dy="0.71em">A</text>
+            </g>
+            <g class="tick" opacity="1" transform="translate(131.980198019802,0)">
+              <line stroke="currentColor" y2="6"></line>
+              <text fill="currentColor" y="9" dy="0.71em">B</text>
+            </g>
+            <g class="tick" opacity="1" transform="translate(217.12871287128715,0)">
+              <line stroke="currentColor" y2="6"></line>
+              <text fill="currentColor" y="9" dy="0.71em">C</text>
+            </g>
+            <g class="tick" opacity="1" transform="translate(302.2772277227723,0)">
+              <line stroke="currentColor" y2="6"></line>
+              <text fill="currentColor" y="9" dy="0.71em">D</text>
+            </g>
+            <g class="tick" opacity="1" transform="translate(387.42574257425747,0)">
+              <line stroke="currentColor" y2="6"></line>
+              <text fill="currentColor" y="9" dy="0.71em">E</text>
+            </g>
+            <g class="tick" opacity="1" transform="translate(472.57425742574264,0)">
+              <line stroke="currentColor" y2="6"></line>
+              <text fill="currentColor" y="9" dy="0.71em">F</text>
+            </g>
+            <g class="tick" opacity="1" transform="translate(557.7227722772277,0)">
+              <line stroke="currentColor" y2="6"></line>
+              <text fill="currentColor" y="9" dy="0.71em">G</text>
+            </g>
+            <g class="tick" opacity="1" transform="translate(642.8712871287129,0)">
+              <line stroke="currentColor" y2="6"></line>
+              <text fill="currentColor" y="9" dy="0.71em">H</text>
+            </g>
+            <g class="tick" opacity="1" transform="translate(728.0198019801979,0)">
+              <line stroke="currentColor" y2="6"></line>
+              <text fill="currentColor" y="9" dy="0.71em">I</text>
+            </g>
+            <g class="tick" opacity="1" transform="translate(813.1683168316832,0)">
+              <line stroke="currentColor" y2="6"></line>
+              <text fill="currentColor" y="9" dy="0.71em">J</text>
+            </g>
+          </g>
+          <g>
+            <circle
+              class="coloredCircle"
+              cx="46.83168316831686"
+              cy="38.31683168316832"
+              r="38.31683168316832"
+              fill="#02fd02"
+            ></circle>
+            <circle
+              class="coloredCircle"
+              cx="131.980198019802"
+              cy="38.31683168316832"
+              r="38.31683168316832"
+              fill="#1ee11e"
+            ></circle>
+            <circle
+              class="coloredCircle"
+              cx="217.12871287128715"
+              cy="38.31683168316832"
+              r="38.31683168316832"
+              fill="#3ac53a"
+            ></circle>
+            <circle
+              class="coloredCircle"
+              cx="302.2772277227723"
+              cy="38.31683168316832"
+              r="38.31683168316832"
+              fill="#56a956"
+            ></circle>
+            <circle
+              class="coloredCircle"
+              cx="387.42574257425747"
+              cy="38.31683168316832"
+              r="38.31683168316832"
+              fill="#728d72"
+            ></circle>
+            <circle
+              class="coloredCircle"
+              cx="472.57425742574264"
+              cy="38.31683168316832"
+              r="38.31683168316832"
+              fill="#8d728d"
+            ></circle>
+            <circle
+              class="coloredCircle"
+              cx="557.7227722772277"
+              cy="38.31683168316832"
+              r="38.31683168316832"
+              fill="#a956a9"
+            ></circle>
+            <circle
+              class="coloredCircle"
+              cx="642.8712871287129"
+              cy="38.31683168316832"
+              r="38.31683168316832"
+              fill="#c53ac5"
+            ></circle>
+            <circle
+              class="coloredCircle"
+              cx="728.0198019801979"
+              cy="38.31683168316832"
+              r="38.31683168316832"
+              fill="#e11ee1"
+            ></circle>
+            <circle
+              class="coloredCircle"
+              cx="813.1683168316832"
+              cy="38.31683168316832"
+              r="38.31683168316832"
+              fill="#fd02fd"
+            ></circle>
+          </g>
+        </g></svg
+      ><svg id="vis-slopes" width="900" height="126.63366336633663">
+        <text class="label" transform="translate(10,18)">slopes</text>
+        <g transform="translate(30, 30)">
+          <g
+            class="axis axis--x"
+            transform="translate(0,76.63366336633663)"
+            fill="none"
+            font-size="10"
+            font-family="sans-serif"
+            text-anchor="middle"
+          >
+            <path class="domain" stroke="currentColor" d="M0,6V0H860V6"></path>
+            <g class="tick" opacity="1" transform="translate(46.83168316831686,0)">
+              <line stroke="currentColor" y2="6"></line>
+              <text fill="currentColor" y="9" dy="0.71em">A</text>
+            </g>
+            <g class="tick" opacity="1" transform="translate(131.980198019802,0)">
+              <line stroke="currentColor" y2="6"></line>
+              <text fill="currentColor" y="9" dy="0.71em">B</text>
+            </g>
+            <g class="tick" opacity="1" transform="translate(217.12871287128715,0)">
+              <line stroke="currentColor" y2="6"></line>
+              <text fill="currentColor" y="9" dy="0.71em">C</text>
+            </g>
+            <g class="tick" opacity="1" transform="translate(302.2772277227723,0)">
+              <line stroke="currentColor" y2="6"></line>
+              <text fill="currentColor" y="9" dy="0.71em">D</text>
+            </g>
+            <g class="tick" opacity="1" transform="translate(387.42574257425747,0)">
+              <line stroke="currentColor" y2="6"></line>
+              <text fill="currentColor" y="9" dy="0.71em">E</text>
+            </g>
+            <g class="tick" opacity="1" transform="translate(472.57425742574264,0)">
+              <line stroke="currentColor" y2="6"></line>
+              <text fill="currentColor" y="9" dy="0.71em">F</text>
+            </g>
+            <g class="tick" opacity="1" transform="translate(557.7227722772277,0)">
+              <line stroke="currentColor" y2="6"></line>
+              <text fill="currentColor" y="9" dy="0.71em">G</text>
+            </g>
+            <g class="tick" opacity="1" transform="translate(642.8712871287129,0)">
+              <line stroke="currentColor" y2="6"></line>
+              <text fill="currentColor" y="9" dy="0.71em">H</text>
+            </g>
+            <g class="tick" opacity="1" transform="translate(728.0198019801979,0)">
+              <line stroke="currentColor" y2="6"></line>
+              <text fill="currentColor" y="9" dy="0.71em">I</text>
+            </g>
+            <g class="tick" opacity="1" transform="translate(813.1683168316832,0)">
+              <line stroke="currentColor" y2="6"></line>
+              <text fill="currentColor" y="9" dy="0.71em">J</text>
+            </g>
+          </g>
+          <g>
+            <g
+              class="slope"
+              transform="translate(46.83168316831686,38.31683168316832) rotate(-0.9)"
+            >
+              <line x1="-38.31683168316832" x2="38.31683168316832" y1="0" y2="0"></line>
+            </g>
+            <g
+              class="slope"
+              transform="translate(131.980198019802,38.31683168316832) rotate(-10.700000000000001)"
+            >
+              <line x1="-38.31683168316832" x2="38.31683168316832" y1="0" y2="0"></line>
+            </g>
+            <g
+              class="slope"
+              transform="translate(217.12871287128715,38.31683168316832) rotate(-20.500000000000004)"
+            >
+              <line x1="-38.31683168316832" x2="38.31683168316832" y1="0" y2="0"></line>
+            </g>
+            <g
+              class="slope"
+              transform="translate(302.2772277227723,38.31683168316832) rotate(-30.3)"
+            >
+              <line x1="-38.31683168316832" x2="38.31683168316832" y1="0" y2="0"></line>
+            </g>
+            <g
+              class="slope"
+              transform="translate(387.42574257425747,38.31683168316832) rotate(-40.1)"
+            >
+              <line x1="-38.31683168316832" x2="38.31683168316832" y1="0" y2="0"></line>
+            </g>
+            <g
+              class="slope"
+              transform="translate(472.57425742574264,38.31683168316832) rotate(-49.9)"
+            >
+              <line x1="-38.31683168316832" x2="38.31683168316832" y1="0" y2="0"></line>
+            </g>
+            <g
+              class="slope"
+              transform="translate(557.7227722772277,38.31683168316832) rotate(-59.7)"
+            >
+              <line x1="-38.31683168316832" x2="38.31683168316832" y1="0" y2="0"></line>
+            </g>
+            <g
+              class="slope"
+              transform="translate(642.8712871287129,38.31683168316832) rotate(-69.5)"
+            >
+              <line x1="-38.31683168316832" x2="38.31683168316832" y1="0" y2="0"></line>
+            </g>
+            <g
+              class="slope"
+              transform="translate(728.0198019801979,38.31683168316832) rotate(-79.30000000000001)"
+            >
+              <line x1="-38.31683168316832" x2="38.31683168316832" y1="0" y2="0"></line>
+            </g>
+            <g
+              class="slope"
+              transform="translate(813.1683168316832,38.31683168316832) rotate(-89.1)"
+            >
+              <line x1="-38.31683168316832" x2="38.31683168316832" y1="0" y2="0"></line>
+            </g>
+          </g>
+        </g>
+      </svg>
+    </div>
+  </body>
+</html>

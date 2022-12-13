@@ -1,0 +1,49 @@
+abigailbarnes p1 grade: 62/72
+Graded revision 7
+
+Graded by: GLK
+
+Thanks for pointing out helpful links!  Feel free to share things like this on EdStem,
+as a comment in https://edstem.org/us/courses/21435/discussion/1357334
+
+
+Additional feedback: when you find yourself repeating expressions like
+  layout.xScale(d.cat) + layout.xScale.bandwidth()/2
+then you can create a new temp variable with, for example
+  const bw = (layout.xScale.bandwidth()/2;
+and/or a little helper function like:
+  const xx = (d) => layout.xScale(d.cat) + layout.xScale.bandwidth()/2;
+which can be used with a .attr() d3 method.
+(The structure of this particular assignment, with multiple separate but similar
+functions, does unfortunately require the repetition of these definitions.)
+Large amounts of copy-paste-generated code (known as "copy-pasta") makes code less
+useful for humans, by decreasing legibility, and increasing the work of maintenance.
+*** Too much copy-pasta may be a cause for deductions in future assignments.
+
+
+#cksum = 4/4 (any modifications flagged by cksum messages)
+
+#1a = 4/4 (bars: tests that scales are working)
+#1b = 4/4 (dots)
+#1c = 4/4 (sticks)
+#1d = 4/4 (outlineCircles)
+#1e = 4/4 (sizedCircles)
+#1f = 4/4 (roundRects)
+#1g = 4/4 (coloredCircles)
+#1h = 6/6 (slopes)
+
+#2a = 4/4 (can change dataRange)
+#2b = 4/4 (can change dataLen)
+#2c = 4/4 (can change padding)
+#2d = 4/4 (can make data with util.dataGen(dataRange, dataLen, { randomize: true }); )
+#2e = 4/4 (can change styling)
+
+#3a = 0/10 (added brief descriptive comments)
+You had no comments.  The top of p1.js asked you to add brief descriptive comments to
+document your thoughtful intent in the code you wrote.  Comments are vital for
+helping other humans understand what your code is doing and how.
+#3b = 4/4 (coloredCircles colored according to directions)
+
+Requests for reconsideration of a grade should be made within one week (of
+this grade being returned) by posting a private note in the p1 Edstem category.
+State your CNetID, the issues you think was mis-graded, and your explanation.
